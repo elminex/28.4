@@ -13,7 +13,7 @@ import CountryFlagContainer from './containers/flag-container.component';
 import CountryDetailsContainer from './containers/country-details.component';
 import ContinentsContainer from './containers/continent-container.component';
 
-render (
+render(
     <Provider store={store}>
         <div>
             <HashRouter>
@@ -23,10 +23,10 @@ render (
                         <Route exact path='/' component={Home} />
                         <Route path='/countries'>
                             <Route path='/countries/country/:id' component={CountryDetailsContainer} />
-                            <Route exact path='/countries' component={CountryFlagContainer} /> 
+                            <Route exact path='/countries' component={CountryFlagContainer} />
                         </Route>
-                        <Route patch='/continents' component={ContinentsContainer} />
                         <Route path='/contact' component={Contact} />
+                        <Route patch='/continents' component={ContinentsContainer} />
                         <Route path='/*' component={NotFound} />
                     </Switch>
                 </div>

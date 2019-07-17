@@ -4,6 +4,10 @@ import { setContinent, deleteCountry } from '../actions/actions';
 import CountryFlagList from '../presentational/flag-list.component';
 
 class ContinentsContainer extends React.Component {
+    constructor(props) {
+        super(props);
+        this.deleteCountry = this.deleteCountry.bind(this);
+    }
 
     chooseContinent(e) {
         this.props.dispatch(setContinent(e.target.value));
@@ -20,17 +24,19 @@ class ContinentsContainer extends React.Component {
     render() {
         return (
             <div>
-                <select onChange={(e) => this.chooseContinent(e)}>
-                    <option value="Europa">Europa</option>
-                    <option value="Afryka">Afryka</option>
-                </select>
+                <div className="search text-center">
+                    <select onChange={(e) => this.chooseContinent(e)}>
+                        <option value="Europa">Europa</option>
+                        <option value="Afryka">Afryka</option>
+                    </select>
+                </div>
                 <CountryFlagList countries={this.props.visibleCountries} deleteCountry={this.deleteCountry} />
             </div>
         )
     }
 }
 
-const mapStateToProps = function( state ) {
+const mapStateToProps = function (state) {
     return {
         visibleCountries: state.countriesReducer.visibleCountries
     };
