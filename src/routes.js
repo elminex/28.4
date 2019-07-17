@@ -4,6 +4,7 @@ import Navigation from './presentational/navigation.component';
 import Home from './presentational/home.component';
 import Contact from './presentational/contact.component';
 import NotFound from './presentational/not-found.component';
+import CountryFlagContainer from './containers/flag-container.component';
 
 
 export default (
@@ -12,6 +13,7 @@ export default (
             <Route exact patch='/' component={Home} />
             <Route path='contact' component={Contact} />
             <Route path='*' component={NotFound} />
+            <Route path='/countries' component={CountryFlagContainer} />
         </Switch>
     </Route>
 );

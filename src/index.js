@@ -9,22 +9,29 @@ import Contact from './presentational/contact.component';
 import NotFound from './presentational/not-found.component';
 import "bootstrap";
 import DevTools from './DevTools';
+import CountryFlagContainer from './containers/flag-container.component';
+import CountryDetailsContainer from './containers/country-details.component';
+import ContinentsContainer from './containers/continent-container.component';
 
-render(
+render (
     <Provider store={store}>
         <div>
-        <HashRouter>
-            <div>
-                <Route path='/' component={Navigation}>
-                </Route>
-                <Switch>
-                    <Route exact path='/' component={Home} />
-                    <Route path='/contact' component={Contact} />
-                    <Route path='/*' component={NotFound} />
-                </Switch>
-            </div>
-        </HashRouter>
-        <DevTools />
+            <HashRouter>
+                <div>
+                    <Route component={Navigation} />
+                    <Switch>
+                        <Route exact path='/' component={Home} />
+                        <Route path='/countries'>
+                            <Route path='/countries/country/:id' component={CountryDetailsContainer} />
+                            <Route exact path='/countries' component={CountryFlagContainer} /> 
+                        </Route>
+                        <Route patch='/continents' component={ContinentsContainer} />
+                        <Route path='/contact' component={Contact} />
+                        <Route path='/*' component={NotFound} />
+                    </Switch>
+                </div>
+            </HashRouter>
+            <DevTools />
         </div>
     </Provider>,
     document.getElementById('root')
