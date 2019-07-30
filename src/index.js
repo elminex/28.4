@@ -7,8 +7,8 @@ import Navigation from './presentational/navigation.component';
 import Home from './presentational/home.component';
 import Contact from './presentational/contact.component';
 import NotFound from './presentational/not-found.component';
+import "jquery";
 import "bootstrap";
-import DevTools from './DevTools';
 import CountryFlagContainer from './containers/flag-container.component';
 import CountryDetailsContainer from './containers/country-details.component';
 import ContinentsContainer from './containers/continent-container.component';
@@ -31,7 +31,6 @@ render(
                     </Switch>
                 </div>
             </HashRouter>
-            <DevTools />
         </div>
     </Provider>,
     document.getElementById('root')

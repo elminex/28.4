@@ -10,10 +10,10 @@ const Navigation = props => (
                 <div className="navbar-header">
                     <Link className="navbar-brand" to="/">Państwa.js</Link>
                 </div>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse">
+                <div className="collapse navbar-collapse" id="navbarContent">
                     <ul className="navbar-nav">
                         <li className="nav-item"><Link className="nav-link active" to="/countries">Countries</Link></li>
                         <li className="nav-item"><Link className="nav-link" to="/continents">Continents</Link></li>
